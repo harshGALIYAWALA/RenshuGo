@@ -14,7 +14,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -25,28 +24,31 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.shinkatech.renshugo.view.splashScreen.SplashScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Scaffold(modifier = Modifier.fillMaxSize()) {
-                var showSplash by remember { mutableStateOf(true) }
-                if (showSplash) {
-                    SplashScreen(
-                        modifier = Modifier.padding(it),
-                        onTimeOut = { showSplash = false }
-                    )
-                } else {
-                    AccessKana(
-                        modifier = Modifier.padding(it)
-                    )
-                }
-            }
+//            Scaffold(modifier = Modifier.fillMaxSize()) {
+//                var showSplash by remember { mutableStateOf(true) }
+//                if (showSplash) {
+//                    SplashScreen(
+//                        modifier = Modifier.padding(it),
+//                        onTimeOut = { showSplash = false },
+//                    )
+//                } else {
+//                    AccessKana(
+//                        modifier = Modifier.padding(it)
+//                    )
+//                }
+//            }
+
+            val navController = rememberNavController()
+            Navigation(navController)
         }
     }
 }

@@ -58,4 +58,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation ("com.google.code.gson:gson:2.10.1")
+    // Jetpack Compose integration
+    implementation("androidx.navigation:navigation-compose:2.9.3")
 }
