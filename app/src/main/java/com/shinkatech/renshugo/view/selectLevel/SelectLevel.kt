@@ -16,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.shinkatech.renshugo.Screen
 
 data class JLPTLevel(
     val name: String,
@@ -75,8 +76,10 @@ fun SelectLevel(navController: NavHostController) {
                         level = level,
                         onClick = {
                             if (level.isAvailable) {
-                                // Navigate to the selected level
-                                // navController.navigate("level_screen/${level.level}")
+                                // for now not using DataStore to saved Jlpt level
+                                navController.navigate(Screen.MainScreen.route){
+                                    popUpTo(0) { inclusive = true }
+                                }
                             }
                         }
                     )
