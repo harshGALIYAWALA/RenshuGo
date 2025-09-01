@@ -161,7 +161,7 @@ fun MainScreen(navController: NavHostController) {
                         description = "46 characters",
                         color = Color(0xFF6B73FF),
                         onClick = {
-                            // Navigate to Hiragana
+//                            navController.navigate("kana_detail/hiragana")
                         }
                     )
 
@@ -173,7 +173,7 @@ fun MainScreen(navController: NavHostController) {
                         description = "46 characters",
                         color = Color(0xFF9C27B0),
                         onClick = {
-                            // Navigate to Katakana
+//                            navController.navigate("kana_detail/katakana")
                         }
                     )
                 }
