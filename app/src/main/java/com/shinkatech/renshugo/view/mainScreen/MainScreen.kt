@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.shinkatech.renshugo.Screen
 
 @Composable
 fun MainScreen(navController: NavHostController) {
@@ -161,7 +162,7 @@ fun MainScreen(navController: NavHostController) {
                         description = "46 characters",
                         color = Color(0xFF6B73FF),
                         onClick = {
-//                            navController.navigate("kana_detail/hiragana")
+                            navController.navigate(Screen.hiraganaDetailScreen.route)
                         }
                     )
 

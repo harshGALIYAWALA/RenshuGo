@@ -2,21 +2,20 @@ package com.shinkatech.renshugo
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import com.shinkatech.renshugo.view.kanaDetailScreen.KanaDetailScreen
 import com.shinkatech.renshugo.view.mainScreen.MainScreen
 import com.shinkatech.renshugo.view.selectLevel.SelectLevel
 import com.shinkatech.renshugo.view.splashScreen.SplashScreen
+import com.shinkatech.renshugo.view.studyCategoryScreen.hiraganaDetailScreen.HiraganaDetailScreen
 
 sealed class Screen(val route: String){
     object SplashScreen: Screen("splash_screen")
     object SelectLevel: Screen("select_level")
     object MainScreen: Screen("main_screen")
     object KanaDetailScreen: Screen("Kana_detail_screen")
+    object hiraganaDetailScreen: Screen("Hiragana_detail_screen")
 
 }
 
@@ -39,6 +38,9 @@ fun Navigation(navController1: NavHostController) {
         }
         composable(Screen.KanaDetailScreen.route) {
             KanaDetailScreen(navController1)
+        }
+        composable(Screen.hiraganaDetailScreen.route) {
+            HiraganaDetailScreen(navController1)
         }
     }
 }
